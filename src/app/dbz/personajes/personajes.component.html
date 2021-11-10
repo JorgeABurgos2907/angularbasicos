@@ -1,0 +1,12 @@
+<h3> Personajes</h3>
+<hr>
+<ul>
+    <!-- <li> Krilink - 700 </li>
+    <li> Goku - 8500 </li>
+    <li> Vewgeta - 8550 </li>  -->
+
+    <li *ngFor="let personaje of personajes; let i = index">
+        {{personaje.nombre}} - {{personaje.poder | number}}
+    </li>
+
+</ul>

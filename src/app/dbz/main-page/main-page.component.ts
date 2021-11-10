@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Personaje {
-  nombre: string;
-  poder: number;
-}
+import { Personaje } from '../interfaces/dbz.interfaces';
+import { AgregarComponent } from '../agregar/agregar.component';
 
 
 @Component({
@@ -27,27 +24,14 @@ export class MainPageComponent{
     }
   ];
 
-  agregar(){
-
-    if(this.nuevo.nombre.trim().length != 0 && this.nuevo.poder != undefined ){
-      this.personajes.push(this.nuevo);
-      this.nuevo = {
-        nombre: '',
-        poder: 0
-      }
-
-      console.log("Personaje Añadido");
-      // console.log(this.nuevo);
-
-      return;
-    }
-
-    
-  }
-
   nuevo: Personaje = {
     nombre: '',
     poder: 0
+  }
+
+  agregarNuevoPersonaje( argumento: Personaje ){
+    // debugger;
+    this.personajes.push (argumento);
   }
 
 }
